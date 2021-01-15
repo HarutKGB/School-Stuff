@@ -44,3 +44,16 @@ def rendu_monnaie(monnaie, sysmoney=[200, 100, 50, 20, 10, 5, 2, 1], caisse=None
 
     return nb_billets
 
+
+
+nb_billets : dictionnaire
+POUR billet DANS sysmoney:
+	resultat<- DIVMOD(monnaie, billet)
+	SI caisse[billet] > resultat[0] :
+		nb_billets[billet]<- resultat[0]
+		monnaie<- resultat[1]
+	SINON
+		nb_billets[billet]<- caisse[billet]
+		monnaie <-  monnaie – caisse[billet]*billet
+	FIN_SI
+FIN_POUR
