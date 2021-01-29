@@ -24,8 +24,20 @@ poids_maximal = 4
 
 # partie A - n'importe comment
 
+def malle_a(poids_maximal):
+    poids = 4
+    malle = []
+    for element in fournitures_scolaires:
+        if element["Poids"] <= poids_maximal:
+            poids_maximal -= element["Poids"]
+            element.append(malle)
+        else:
+            
+    print(malle)
 
 
 # partie B - plus lourd possible
 
 # partie C - plus de mana possible
+
+
